@@ -1,0 +1,10 @@
+# Build artifacts (keep metro.exe tracked as requested)
+metro
+test_routes
+test_routes.exe
+*.o
+*.obj
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

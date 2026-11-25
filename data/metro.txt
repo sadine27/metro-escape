@@ -1,0 +1,93 @@
+# ==========================================================
+#  NOVA CITY METRO  -  network definition for Metro Escape
+# ==========================================================
+#  LINE    <key> <name> <ansi-colour>
+#  STATION <code> <x> <y> <labelDx> <labelDy> <Full Name>
+#  EDGE    <lineKey> <codeA> <codeB> <minutes>
+#  EXIT    <code>            (city exit used by evacuation mode)
+#
+#  x/y are positions on the 78x22 ASCII map.
+#  Edit this file to build your own city - no recompiling needed.
+# ----------------------------------------------------------
+
+LINE R Red    91
+LINE B Blue   94
+LINE G Green  92
+LINE Y Yellow 93
+LINE P Purple 95
+
+# ---- Red line (west -> east) ----
+STATION WGT  2 10  0 -1 West Gate
+STATION HBR 14 10 -4  1 Harbour
+STATION MKT 24 10 -1 -1 Market
+STATION CEN 36 10  1 -1 Central
+STATION MUS 48 10 -1  1 Museum
+STATION UNI 60 10  1  1 University
+STATION EGT 74 10 -2 -1 East Gate
+
+# ---- Blue line (north -> south) ----
+STATION NGT 36  0  2  0 North Gate
+STATION PRK 36  3  2  0 Park Lane
+STATION LIB 36  7  2  0 Library
+STATION STD 36 13  2  0 Stadium
+STATION DOC 36 16  2  1 Docklands
+STATION SGT 36 21  2  0 South Gate
+
+# ---- Green line (airport -> beach) ----
+STATION AIR  4  2  2  0 Airport
+STATION TEC 15  6  2  0 Tech Park
+STATION OLD 29 13  2  0 Old Town
+STATION PRT 52 18  0  1 Port
+STATION BCH 68 20  2  0 Beach
+
+# ---- Yellow line (hills -> south west) ----
+STATION HIL 72  1 -4  0 Hill Top
+STATION TWR 58  5  2  0 Tower
+STATION FRT 24 16 -1  1 Fort
+STATION SWG  8 19 -4  0 Sawgrass
+
+# ---- Purple ring extra ----
+STATION GDN 54 14  2  0 Garden
+
+EDGE R WGT HBR 6
+EDGE R HBR MKT 5
+EDGE R MKT CEN 6
+EDGE R CEN MUS 6
+EDGE R MUS UNI 6
+EDGE R UNI EGT 7
+
+EDGE B NGT PRK 3
+EDGE B PRK LIB 4
+EDGE B LIB CEN 3
+EDGE B CEN STD 3
+EDGE B STD DOC 3
+EDGE B DOC SGT 5
+
+EDGE G AIR TEC 7
+EDGE G TEC MKT 6
+EDGE G MKT OLD 4
+EDGE G OLD DOC 5
+EDGE G DOC PRT 8
+EDGE G PRT BCH 8
+
+EDGE Y HIL TWR 8
+EDGE Y TWR MUS 6
+EDGE Y MUS STD 7
+EDGE Y STD FRT 7
+EDGE Y FRT SWG 8
+
+EDGE P TEC LIB 10
+EDGE P LIB TWR 10
+EDGE P TWR UNI 4
+EDGE P UNI GDN 5
+EDGE P GDN DOC 9
+EDGE P GDN PRT 6
+EDGE P DOC FRT 6
+EDGE P FRT HBR 7
+EDGE P HBR TEC 4
+
+EXIT WGT
+EXIT EGT
+EXIT NGT
+EXIT SGT
+EXIT AIR

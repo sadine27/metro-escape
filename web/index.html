@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metro Escape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" class="logo" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#38e1ff"/><stop offset="1" stop-color="#b07cff"/></linearGradient></defs>
+        <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#lg)"/>
+        <path d="M8 22 L13 10 L16 17 L19 10 L24 22" fill="none" stroke="#071021" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">Metro Escape</div>
+        <div class="brand-sub">Nova City transit &amp; emergency planner</div>
+      </div>
+    </div>
+    <div class="top-mid" id="topStats"></div>
+    <div class="top-right">
+      <label class="clock" title="Simulation clock - click to change">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <input type="time" id="clockInput" step="60">
+      </label>
+      <div class="chip" id="incChip"></div>
+      <button class="btn small hidden" id="resetBtn" title="Clear all incidents and reset clock">Reset</button>
+      <button class="btn primary" id="storyBtn">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Story mode
+      </button>
+    </div>
+  </header>
+
+  <nav id="nav"></nav>
+
+  <main id="stage">
+    <svg id="map" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div id="hud"><div class="hud-title"></div><div class="hud-sub"></div></div>
+    <div id="simclock" class="hidden"></div>
+    <div id="banner" class="hidden"></div>
+    <div id="dock">
+      <div id="scrub" class="hidden">
+        <button id="playBtn" class="icon-btn" title="Play / pause"></button>
+        <input type="range" id="scrubRange" min="0" max="100" step="0.05" value="0">
+        <div id="scrubLabel">T+0.0</div>
+        <select id="speedSel" title="Playback speed">
+          <option value="400">0.5x</option><option value="220" selected>1x</option><option value="110">2x</option>
+        </select>
+      </div>
+      <div id="caption" class="hidden"></div>
+      <div class="dock-row">
+        <div id="legend"></div>
+        <div id="engine"><div class="engine-head"><span class="live"></span>C engine · live calls</div><div id="engineLog"></div></div>
+      </div>
+    </div>
+    <div id="tip" class="hidden"></div>
+    <div id="pop" class="hidden"></div>
+  </main>
+
+  <aside id="panel"></aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
